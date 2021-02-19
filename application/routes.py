@@ -1,9 +1,20 @@
 from application import app
+from flask import render_template
 
-@app.route("/")
-def abc():
-    return "<h1>Hello</h1>"
-    
+@app.route("/")   
 @app.route("/index")
 def index():
-    return "<h1>Hello This is my First Flask app</h1>"
+    return render_template("includes/index.html")
+
+@app.route("/courses")
+def courses():
+    return render_template("includes/courses.html")
+
+
+@app.route("/register")
+def register():
+    return render_template("includes/register.html")
+
+@app.route("/login")
+def login():
+    return render_template("includes/register.html")
